@@ -1,9 +1,13 @@
 import React from 'react';
+import Header from '../components/Header/Header';
+import Footer from '../components/Button/Footer/Footer';
+import ExamPage from './ExamPage';
 
 function Home() {
   return (
     <div className="text-center p-10 bg-gray-100 min-h-screen">
-      <h1 className="text-5xl font-bold text-gray-700 mb-5">Welcome to Exam.mn</h1>
+      <Header/>
+      <h1 className="text-5xl font-bold text-gray-700 mt-15 mb-5">Welcome to Exam.mn</h1>
       <p className="text-xl text-gray-600 mb-10">
         Take your exams easily and efficiently with Exam.mn.
       </p>
@@ -14,7 +18,10 @@ function Home() {
         >
           Get Started
         </a>
+
+        <ExamPage/>
       </div>
+      <Footer/>
     </div>
   );
 }

@@ -13,15 +13,14 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/signup', formData); // backend URL
-      setSuccess(true);
-      setError('');
-      console.log(response.data); // Handle success (e.g., redirect or show a message)
+      const response = await axios.post('http://localhost:8080/api/users/signup', formData);
+      alert('Signup successful!');
     } catch (err) {
-      setError(err.response?.data?.message || 'Something went wrong');
-      setSuccess(false);
+      alert(err.response?.data?.message || 'Error signing up');
     }
   };
+  
+  
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">

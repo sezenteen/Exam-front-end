@@ -12,15 +12,19 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/login', formData); //backend URL
-      const token = response.data.token; // Assuming the API returns a token
-      localStorage.setItem('authToken', token); // Save token to localStorage
-      setError('');
-      console.log('Login successful'); // Handle success (e.g., redirect)
+      const response = await axios.post(
+        'http://localhost:8080/api/users/login',
+        {},
+        { params: { email: formData.email, password: formData.password } }
+      );
+      localStorage.setItem('authToken', response.data.token); // Save token if returned
+      alert('Login successful!');
     } catch (err) {
-      setError(err.response?.data?.message || 'Invalid credentials');
+      alert(err.response?.data?.message || 'Invalid login credentials');
     }
   };
+  
+  
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">

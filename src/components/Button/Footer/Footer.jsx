@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <footer>
-        <p class="flex justify-center align-bottom text-gray-500 text-[15px] ">&#169; 2024 Exam.mn</p>
+        <p className="flex justify-center align-bottom text-gray-500 text-[15px] pt-200">&#169; 2024 Exam.mn</p>
     </footer>
   )
 }
